@@ -1,5 +1,5 @@
 <p>
-  Cuvette Codoctober Hackathon 2021
+  Cuvette Codoctober Hackathon 2021 <br>
   00:00 23-10-21   to   10:00 25-10-21
 </p>
 
