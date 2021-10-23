@@ -2,9 +2,9 @@ import axios from 'axios';
 class AuthResource {
     constructor() {
         if (process.env.NODE_ENV === 'production') {
-            this.host = 'https://zouke.in';
+            this.host = '...';
         } else {
-            this.host = 'http://localhost:8000';
+            this.host = 'http://localhost:8080';
         }
         this.mock = (process.env.NODE_ENV !== 'production');
     }
@@ -17,22 +17,7 @@ class AuthResource {
             }
         };
 
-        if (this.mock) {
-            return new Promise((resolve, reject) => {
-                resolve({
-                    'data': {
-                        "id": 1,
-                        "name": "Abhishek Bharadwaz",
-                        "email": "abhishekbharadwaz22@gmail.com",
-                        "profile-pic": "https://picsum.photos/200",
-                        "domain": "coding"
-                    }
-                });
-            });
-        }
-
-        return axios
-            .get(this.host + '...', config);
+        return axios.get(this.host + '...', config);
     }
 
     loginUser(name, password) {
@@ -47,22 +32,7 @@ class AuthResource {
             'password': password
         };
 
-        if (this.mock) {
-            return new Promise((resolve, reject) => {
-                resolve({
-                    'data': {
-                        "user": {
-                            "id": 1,
-                            "name": "Abhishek Bharadwaz",
-                            "email": "abhishekbharadwaz22@gmail.com",
-                            "profile-pic": "https://picsum.photos/200",
-                            "domain": "coding"
-                        },
-                        "token": "12345"
-                    }
-                });
-            });
-        }
+        console.log(data);
 
         return axios
             .post(this.host + '...', data, config);
@@ -83,26 +53,7 @@ class AuthResource {
             'domain': domain
         };
 
-        console.log(data);
-        if (this.mock) {
-            return new Promise((resolve, reject) => {
-                resolve({
-                    'data': {
-                        "user": {
-                            "id": 1,
-                            "name": "Abhishek Bharadwaz",
-                            "email": "abhishekbharadwaz22@gmail.com",
-                            "profile-pic": "https://picsum.photos/200",
-                            "domain": "coding"
-                        },
-                        "token": "12345"
-                    }
-                });
-            });
-        }
-
-        return axios
-            .post(this.host + '...', data, config);
+        return axios.post(this.host + '...', data, config);
     }
 
     logoutUser(token) {
@@ -113,14 +64,7 @@ class AuthResource {
             }
         };
 
-        if (this.mock) {
-            return new Promise((resolve, reject) => {
-                resolve({});
-            });
-        }
-
-        return axios
-            .post(this.host + '...', {}, config);
+        return axios.post(this.host + '...', {}, config);
     }
 }
 
