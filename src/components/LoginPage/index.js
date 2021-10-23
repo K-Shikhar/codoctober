@@ -15,13 +15,13 @@ const Index = (props) => {
                             <h2 className={styles["title"]}>Sign in</h2>
                             <div className={styles["input-field"]}>
                                 <i className="fas fa-user"></i>
-                                <input type="email" placeholder="Email" name='name' value={props.name} onChange={props.handleChange} />
+                                <input type="email" placeholder="Email" name='email_login' value={props.email_login} onChange={props.handleChange} />
                             </div>
                             <div className={styles["input-field"]}>
                                 <i className={`${styles["fas"]} ${styles["fa-lock"]}`}></i>
-                                <input type="password" placeholder="Password" name='password' value={props.password} onChange={props.handleChange} />
+                                <input type="password" placeholder="Password" name='password_login' value={props.password_login} onChange={props.handleChange} />
                             </div>
-                            <input type="submit" value="Login" className={`${styles["btn"]} ${styles["solid"]}`} onClick={props.handleSubmit} />
+                            <input type="submit" value="Login" className={`${styles["btn"]} ${styles["solid"]}`} onClick={props.handleFormSubmit} />
                         </form>
                         <form action="#" className={styles["sign-up-form"]}>
                             <h2 className={styles["title"]}>Sign up</h2>
@@ -56,7 +56,7 @@ const Index = (props) => {
                                     <span >I accept the <a className={styles["terms"]} href="#">Terms and Conditions </a></span>
                                 </label>
                             </div>
-                            <input type="submit" className={styles["btn"]} value="Sign up" onClick={props.handleSubmit} />
+                            <input type="submit" className={styles["btn"]} value="Sign up" onClick={props.handleFormSubmit} />
                         </form>
                     </div>
                 </div>

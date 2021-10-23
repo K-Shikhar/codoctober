@@ -20,7 +20,7 @@ class AuthResource {
         return axios.get(this.host + '...', config);
     }
 
-    loginUser(name, password) {
+    loginUser(email, password) {
         const config = {
             headers: {
                 'Content-Type': 'application/json'
@@ -28,11 +28,9 @@ class AuthResource {
         };
 
         const data = {
-            'name': name,
+            'email': email,
             'password': password
         };
-
-        console.log(data);
 
         return axios
             .post(this.host + '...', data, config);

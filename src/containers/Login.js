@@ -8,8 +8,8 @@ class Login extends Component {
         super(props);
         this.state = {
             isGettingSubmitted: false,
-            email: props.auth.lastUsedEmail || "",
-            password: "",
+            email_login: props.auth.lastUsedEmail || "",
+            password_login: "",
         };
     }
 
@@ -19,17 +19,22 @@ class Login extends Component {
 
     handleFormSubmit = (event) => {
         event.preventDefault();
-        this.props.dispatch(loginUser(this.state.email, this.state.password));
+        this.props.dispatch(loginUser(this.state.email_login, this.state.password_login));
     };
 
+    componentDidUpdate() {
+        if (this.props.auth.isAuthenticated) {
+            this.props.history.replace('....Dashboard Redirect');
+        }
+    }
+
     render() {
-        const { email, password } = this.state;
+        const { email_login, password_login } = this.state;
         const { loginInitiated } = this.props.auth;
-        console.log(email, password);
         return (
             <LoginComponent
-                email={email}
-                password={password}
+                email_login={email_login}
+                password_login={password_login}
                 isGettingSubmitted={loginInitiated}
                 handleChange={this.handleChange}
                 handleFormSubmit={this.handleFormSubmit}

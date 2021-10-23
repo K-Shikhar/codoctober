@@ -13,7 +13,7 @@ class Signup extends Component {
             profilePic: "",
             name: "",
             email: "",
-            password1: "",
+            password: "",
             password2: "",
             domain: "",
             terms: false
@@ -26,7 +26,7 @@ class Signup extends Component {
 
     handleFormSubmit = (event) => {
         event.preventDefault();
-        store.dispatch(signupUser(this.state.email, this.state.password1, this.state.password2));
+        store.dispatch(signupUser(this.state.email, this.state.password, this.state.password2));
     };
 
     componentDidUpdate() {
@@ -42,7 +42,7 @@ class Signup extends Component {
                 name={this.state.name}
                 email={this.state.email}
                 domain={this.state.domain}
-                password1={this.state.password1}
+                password1={this.state.password}
                 password2={this.state.password2}
                 terms={this.state.terms}
                 isGettingSubmitted={signupInitiated}
