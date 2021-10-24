@@ -26,7 +26,7 @@ const Index = () => {
                 </div>
                 <div className={styles["title"]}>
                     <span className={styles['title-span']}>
-                        Lorem ipsum dolor sit amet consectetur adipisicing elit. Perspiciatis dolore molestias assumenda natus debitis. Consectetur non culpa eaque.
+                        This is Team HackOverflowIt. We build this app using MERN Stack. Hope you enjoy using it. There are still some bugs and we are working on it!
                     </span>
                 </div>
                 <div className={styles["btn-section"]}>
