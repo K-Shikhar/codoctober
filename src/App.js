@@ -4,6 +4,7 @@ import { Provider } from 'react-redux';
 import { URL_PREFIX } from './constant';
 import Login from './containers/Login';
 import Notes from './containers/Notes';
+import Feed from './containers/Feed';
 import store from './redux/store';
 
 function App() {
@@ -28,6 +29,12 @@ function App() {
                         path={URL_PREFIX + '/user/notes'}
                         component={Notes}
                         key='route-notes-screen'
+                    />
+                    <Route
+                        exact
+                        path={URL_PREFIX + '/home'}
+                        component={Feed}
+                        key='route-feed-screen'
                     />
                     <Redirect to={URL_PREFIX + '/home'} />
                 </Switch>
