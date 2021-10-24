@@ -42,7 +42,7 @@ class NotesResource {
         return axios.get(this.host + '...', config);
     }
 
-    createNotes(text, date) {
+    createNotes(id, text, date) {
         const config = {
             headers: {
                 'Content-Type': 'application/json'
@@ -50,10 +50,14 @@ class NotesResource {
         };
 
         console.log('working');
+
         const data = {
+            'id': id,
             'text': text,
             'date': date
         };
+
+        console.log(data);
 
         if (this.mock) {
             return new Promise((resolve, reject) => {
@@ -74,21 +78,6 @@ class NotesResource {
                             'text': 'some note3',
                             'data': '24/07/2021'
                         },
-                        {
-                            'id': 1,
-                            'text': 'some note',
-                            'data': '24/07/2021'
-                        },
-                        {
-                            'id': 2,
-                            'text': 'some note2',
-                            'data': '24/07/2021'
-                        },
-                        {
-                            'id': 3,
-                            'text': 'some note3',
-                            'data': '24/07/2021'
-                        }
                     ]
                 });
             });

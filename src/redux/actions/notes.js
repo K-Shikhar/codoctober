@@ -9,8 +9,8 @@ function getErrorMessage(err) {
     return err.response ? err.response.data.error : err.message ? err.message : "Unknown error";
 }
 
-function internalCreateNote(text, date, dispatch) {
-    new NotesResource().createNotes(text, date)
+function internalCreateNote(id, text, date, dispatch) {
+    new NotesResource().createNotes(id, text, date)
         .then(res => {
             dispatch({
                 type: CREATE_NOTES_SUCCESS
@@ -49,11 +49,11 @@ function internalGetNotes(dispatch, token) {
         });
 }
 
-export const createNotes = (text, date) => (dispatch) => {
+export const createNotes = (id, text, date) => (dispatch) => {
     dispatch({
         type: CREATE_NOTES_INITIATED,
     });
-    internalCreateNote(text, date, dispatch);
+    internalCreateNote(id, text, date, dispatch);
 }
 
 export const getNotes = (token) => (dispatch) => {

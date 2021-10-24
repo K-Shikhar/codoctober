@@ -13,15 +13,10 @@ class Notes extends Component {
 
     addNote = (text) => {
         const date = new Date();
-        this.props.dispatch(createNotes({
-            id: nanoid(),
-            text: text,
-            date: date.toLocaleDateString(),
-        }))
+        this.props.dispatch(createNotes(10, text, date.toLocaleDateString()))
     };
 
     render() {
-        console.log(this.props.notes.listOfNotes);
         return (
             <div>
                 <NotesComponent notes={this.props.list} addNote={this.addNote} />
