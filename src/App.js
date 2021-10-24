@@ -2,6 +2,7 @@ import './App.css';
 import { BrowserRouter, Switch, Route, Redirect } from 'react-router-dom';
 import { Provider } from 'react-redux';
 import { URL_PREFIX } from './constant';
+import Home from './containers/Home';
 import Login from './containers/Login';
 import Notes from './containers/Notes';
 import Feed from './containers/Feed';
@@ -26,13 +27,19 @@ function App() {
                     />
                     <Route
                         exact
+                        path={URL_PREFIX + '/home'}
+                        component={Home}
+                        key='route-home-screen'
+                    />
+                    <Route
+                        exact
                         path={URL_PREFIX + '/user/notes'}
                         component={Notes}
                         key='route-notes-screen'
                     />
                     <Route
                         exact
-                        path={URL_PREFIX + '/home'}
+                        path={URL_PREFIX + '/feed'}
                         component={Feed}
                         key='route-feed-screen'
                     />
