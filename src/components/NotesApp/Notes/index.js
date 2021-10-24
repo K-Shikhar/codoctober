@@ -5,7 +5,6 @@ import NotesList from '../NotesList';
 import Search from '../Search';
 import Header from '../Header';
 import styles from './Notes.module.css'
-
 import { getNotes } from '../../../redux/actions/notes'
 
 const Notes = () => {
