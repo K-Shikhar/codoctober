@@ -29,7 +29,7 @@ function internalCreateNote(text, date, dispatch) {
 }
 
 
-function internalGetNotes(id, text, date) {
+function internalGetNotes(id, text, date, dispatch) {
     new NotesResource().getNotes(id, text, date)
         .then((res) => {
             dispatch({
