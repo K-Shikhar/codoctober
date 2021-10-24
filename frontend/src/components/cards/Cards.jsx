@@ -31,7 +31,7 @@ const useStyle = makeStyles(theme => ({
         gridTemplateColumns: 'repeat(3, 1fr)',
     },
     text: {
-        fontSize: 14,
+        fontSize: 'medium',
         marginTop: 5,
         display:'flex',
         color:'#000'
@@ -40,14 +40,13 @@ const useStyle = makeStyles(theme => ({
         marginTop:10,
         marginLeft:10,
         width:'95%',
-        height:100,
+        height:140,
         backgroundColor:'#f5cac2',
         borderRadius:10,
         boxShadow:'2px 2px 2px 2px #888888',
     },
     wrapper2: {
         padding: '20px 150px',
-        width:'100%',
     },
     links:
     {
