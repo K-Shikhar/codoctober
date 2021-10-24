@@ -17,6 +17,7 @@ class Notes extends Component {
     };
 
     render() {
+        console.log(this.props.notes.listOfNotes);
         return (
             <div>
                 <NotesComponent notes={this.props.list} addNote={this.addNote} />

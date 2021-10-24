@@ -49,15 +49,11 @@ class NotesResource {
             }
         };
 
-        console.log('working');
-
         const data = {
             'id': id,
             'text': text,
             'date': date
         };
-
-        console.log(data);
 
         if (this.mock) {
             return new Promise((resolve, reject) => {
