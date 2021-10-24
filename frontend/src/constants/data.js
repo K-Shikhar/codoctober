@@ -14,8 +14,8 @@ export const tracks = [
         name:'Machine learning Track',
         resources: {
             title:'Introduction to c',
-        content:'C is a high-level and general-purpose programming language that is ideal for developing firmware or portable applications.',
-        links:'https://www.freecodecamp.org/news/tag/c-programming/',
+            content:'C is a high-level and general-purpose programming language that is ideal for developing firmware or portable applications.',
+            links:'https://www.freecodecamp.org/news/tag/c-programming/',
         },
     },
             
