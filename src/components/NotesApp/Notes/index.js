@@ -1,11 +1,13 @@
 import { useState, useEffect } from 'react';
+import { connect } from "react-redux"
 import { nanoid } from 'nanoid';
 import NotesList from '../NotesList';
 import Search from '../Search';
 import Header from '../Header';
 import styles from './Notes.module.css'
+import { getNotes } from '../../../redux/actions/notes'
 
-const App = () => {
+const Notes = () => {
     const [notes, setNotes] = useState([
         {
             id: nanoid(),
@@ -66,4 +68,8 @@ const App = () => {
     );
 };
 
-export default App;
+const mapStateToProps = (state) => ({
+    notes: state.notesReducer
+})
+
+export default connect(mapStateToProps)(Notes);

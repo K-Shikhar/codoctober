@@ -9,17 +9,6 @@ class AuthResource {
         this.mock = (process.env.NODE_ENV !== 'production');
     }
 
-    loadUser(token) {
-        const config = {
-            headers: {
-                'Content-Type': 'application/json',
-                'Authorization': `Token ${token}`
-            }
-        };
-
-        return axios.get(this.host + '...', config);
-    }
-
     loginUser(email, password) {
         const config = {
             headers: {
