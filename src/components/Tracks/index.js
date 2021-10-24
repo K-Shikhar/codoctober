@@ -3,40 +3,9 @@ import { MdSearch } from 'react-icons/md';
 import styles from './Tracks.module.css';
 import TrackComponent from '../TrackComponent'
 
-const TracksContainer = () => {
+const TracksContainer = ({ Tracks }) => {
 
     const [searchText, setSearchText] = useState('');
-
-    const Tracks = [
-        {
-            'id': 1,
-            'title': 'Web dev',
-            'domain': 'engineering',
-            'content': 'This is a demo description',
-            'photo': 'https://picsum.photos/200'
-        },
-        {
-            'id': 1,
-            'title': 'Web dev',
-            'domain': 'medical',
-            'content': 'This is a demo description',
-            'photo': 'https://picsum.photos/200'
-        },
-        {
-            'id': 1,
-            'title': 'Web dev',
-            'domain': 'medical',
-            'content': 'This is a demo description',
-            'photo': 'https://picsum.photos/200'
-        },
-        {
-            'id': 1,
-            'title': 'Web dev',
-            'domain': 'engineering',
-            'content': 'This is a demo description',
-            'photo': 'https://picsum.photos/200'
-        },
-    ]
 
     const filteredTracks = Tracks.filter((note) =>
         note.domain.toLowerCase().includes(searchText)
