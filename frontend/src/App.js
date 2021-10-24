@@ -9,12 +9,18 @@ import Cards from './components/cards/Cards.jsx';
 
 
 function App() {
-  return (      
+  return (   
+    
+    <TemplateProvider>
+    <ContextProvider> 
     <BrowserRouter>
       <Header />
       <Sidebar />
       <Cards />
     </BrowserRouter>
+    </ContextProvider>
+    </TemplateProvider>
+
 
   );
 }
