@@ -9,17 +9,6 @@ class AuthResource {
         this.mock = (process.env.NODE_ENV !== 'production');
     }
 
-    loadUser(token) {
-        const config = {
-            headers: {
-                'Content-Type': 'application/json',
-                'Authorization': `Token ${token}`
-            }
-        };
-
-        return axios.get(this.host + '...', config);
-    }
-
     loginUser(email, password) {
         const config = {
             headers: {
@@ -32,8 +21,9 @@ class AuthResource {
             'password': password
         };
 
+        console.log(data);
         return axios
-            .post(this.host + '...', data, config);
+            .post(this.host + '/users/user/login', data, config);
     }
 
     signupUser(name, email, password, profilePic, domain) {
@@ -51,7 +41,7 @@ class AuthResource {
             'domain': domain
         };
 
-        return axios.post(this.host + '...', data, config);
+        return axios.post(this.host + '/users/user/signup', data, config);
     }
 
     logoutUser(token) {
@@ -62,7 +52,7 @@ class AuthResource {
             }
         };
 
-        return axios.post(this.host + '...', {}, config);
+        return axios.post(this.host + '/users/user/logout', {}, config);
     }
 }
 
