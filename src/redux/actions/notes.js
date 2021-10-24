@@ -29,8 +29,8 @@ function internalCreateNote(text, date, dispatch) {
 }
 
 
-function internalGetNotes(id, text, date, dispatch) {
-    new NotesResource().getNotes(id, text, date)
+function internalGetNotes(dispatch, token) {
+    new NotesResource().getNotes(token)
         .then((res) => {
             dispatch({
                 type: GET_NOTES_SUCCESS,
@@ -56,9 +56,9 @@ export const createNotes = (text, date) => (dispatch) => {
     internalCreateNote(text, date, dispatch);
 }
 
-export const getNotes = (id, text, date) => (dispatch) => {
+export const getNotes = (token) => (dispatch) => {
     dispatch({
         type: GET_NOTES_INITIATED,
     });
-    internalGetNotes(dispatch, id, text, date);
+    internalGetNotes(dispatch, token);
 };

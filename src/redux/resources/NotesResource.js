@@ -16,7 +16,29 @@ class NotesResource {
                 'Authorization': `Token ${token}`
             }
         };
-
+        if (this.mock) {
+            return new Promise((resolve, reject) => {
+                resolve({
+                    'data': [
+                        {
+                            'id': 1,
+                            'text': 'some note',
+                            'data': '24/07/2021'
+                        },
+                        {
+                            'id': 2,
+                            'text': 'some note2',
+                            'data': '24/07/2021'
+                        },
+                        {
+                            'id': 3,
+                            'text': 'some note3',
+                            'data': '24/07/2021'
+                        }
+                    ]
+                });
+            });
+        }
         return axios.get(this.host + '...', config);
     }
 
@@ -27,10 +49,50 @@ class NotesResource {
             }
         };
 
+        console.log('working');
         const data = {
             'text': text,
             'date': date
         };
+
+        if (this.mock) {
+            return new Promise((resolve, reject) => {
+                resolve({
+                    'data': [
+                        {
+                            'id': 1,
+                            'text': 'some note',
+                            'data': '24/07/2021'
+                        },
+                        {
+                            'id': 2,
+                            'text': 'some note2',
+                            'data': '24/07/2021'
+                        },
+                        {
+                            'id': 3,
+                            'text': 'some note3',
+                            'data': '24/07/2021'
+                        },
+                        {
+                            'id': 1,
+                            'text': 'some note',
+                            'data': '24/07/2021'
+                        },
+                        {
+                            'id': 2,
+                            'text': 'some note2',
+                            'data': '24/07/2021'
+                        },
+                        {
+                            'id': 3,
+                            'text': 'some note3',
+                            'data': '24/07/2021'
+                        }
+                    ]
+                });
+            });
+        }
 
         return axios.post(this.host + '...', data, config);
     }
