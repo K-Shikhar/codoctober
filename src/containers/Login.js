@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import { loginUser } from '../redux/actions/auth'
 import LoginComponent from '../components/LoginPage'
+import { URL_PREFIX } from '../constant';
 
 class Login extends Component {
     constructor(props) {
@@ -19,12 +20,13 @@ class Login extends Component {
 
     handleFormSubmit = (event) => {
         event.preventDefault();
-        this.props.dispatch(loginUser(this.state.email_login, this.state.password_login));
+        this.props.history.replace(URL_PREFIX + '/feed');
+        // this.props.dispatch(loginUser(this.state.email_login, this.state.password_login));
     };
 
     componentDidUpdate() {
         if (this.props.auth.isAuthenticated) {
-            this.props.history.replace('....Dashboard Redirect');
+            this.props.history.replace(URL_PREFIX + '/feed');
         }
     }
 

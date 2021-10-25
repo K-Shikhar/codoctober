@@ -2,6 +2,7 @@ import React, { useState } from 'react'
 import { MdSearch } from 'react-icons/md';
 import styles from './Tracks.module.css';
 import TrackComponent from '../TrackComponent'
+import Footer from '../Footer';
 
 const TracksContainer = ({ Tracks }) => {
 
@@ -35,6 +36,7 @@ const TracksContainer = ({ Tracks }) => {
             <div className={styles["tracks"]}>
                 {allTracks}
             </div>
+            <Footer />
         </div>
     )
 }

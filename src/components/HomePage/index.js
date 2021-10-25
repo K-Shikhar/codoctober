@@ -7,6 +7,7 @@ import MemberTwo from '../../uploads/2.jpg'
 import MemberThree from '../../uploads/3.jpg'
 import MemberFour from '../../uploads/4.jpg'
 import MemberFive from '../../uploads/5.jpg'
+import Footer from '../Footer';
 
 const Index = () => {
     return (
@@ -198,17 +199,17 @@ const Index = () => {
                     <div className={styles["team-mem"]}>
                         <img src={MemberTwo} />
                         <span className={styles["name"]}>Aditya Agarwal</span>
-                        <span className={styles["desg"]}>Full-Stack Dev</span>
+                        <span className={styles["desg"]}>Back-End Dev</span>
                     </div>
                     <div className={styles["team-mem"]}>
                         <img src={MemberThree} />
                         <span className={styles["name"]}>Jitul Teron</span>
-                        <span className={styles["desg"]}>Full-Stack Dev</span>
+                        <span className={styles["desg"]}>Back-End Dev</span>
                     </div>
                     <div className={styles["team-mem"]}>
                         <img src={MemberFour} />
                         <span className={styles["name"]}>Sourabh Shah</span>
-                        <span className={styles["desg"]}>Full-Stack Dev</span>
+                        <span className={styles["desg"]}>Back-End Dev</span>
                     </div>
                     <div className={styles["team-mem"]}>
                         <img src={MemberFive} />
@@ -217,18 +218,7 @@ const Index = () => {
                     </div>
                 </div>
             </div>
-            <div className={styles["footer"]}>
-                <div className={styles["line-1"]}>
-                    <Link to={URL_PREFIX + '/home'} style={{ textDecoration: 'none', color: 'white' }}>Home</Link>
-                    <Link to={URL_PREFIX + '/login'} style={{ textDecoration: 'none', color: 'white' }}>SignUp</Link>
-                    <Link to={URL_PREFIX + '/home'} style={{ textDecoration: 'none', color: 'white' }}>Dashboard</Link>
-                    <Link to={URL_PREFIX + '/user/notes'} style={{ textDecoration: 'none', color: 'white' }}>Notes</Link>
-                    <Link to={URL_PREFIX + '/feed'} style={{ textDecoration: 'none', color: 'white' }}>Feed</Link>
-                </div>
-                <div className={styles["line-2"]}>
-                    <span>Copyright &copy; Abhishek Bharadwaz and Co. | Terms & Conditions | Privacy Policy | All Rights Reserved</span>
-                </div>
-            </div>
+            <Footer />
         </div>
     )
 }

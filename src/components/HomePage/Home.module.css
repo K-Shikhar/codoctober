@@ -168,22 +168,6 @@
     align-items: center;
     background-color: #121852;
 }
-.line-1{
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    gap: 1rem;
-    margin-top: 2rem;
-    margin-bottom: 2rem;
-}
-.line-2{
-    text-align: center;
-    margin-bottom: 4rem;
-}
-.line-2>span{
-    font-size: 1rem;
-    color: grey;
-}
 @media screen and (max-width:440px){
     .team-boxes{
         flex-direction: column;

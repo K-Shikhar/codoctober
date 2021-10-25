@@ -23,17 +23,17 @@ class NotesResource {
                         {
                             'id': 1,
                             'text': 'some note',
-                            'data': '24/07/2021'
+                            'date': '24/07/2021'
                         },
                         {
                             'id': 2,
                             'text': 'some note2',
-                            'data': '24/07/2021'
+                            'date': '24/07/2021'
                         },
                         {
                             'id': 3,
                             'text': 'some note3',
-                            'data': '24/07/2021'
+                            'date': '24/07/2021'
                         }
                     ]
                 });

@@ -4,6 +4,7 @@ import NotesList from '../NotesList';
 import Search from '../Search';
 import Header from '../Header';
 import styles from './Notes.module.css';
+import Footer from '../../Footer';
 
 
 const Notes = ({ notes, addNote }) => {
@@ -26,6 +27,7 @@ const Notes = ({ notes, addNote }) => {
                     handleAddNote={addNote}
                 />
             </div>
+            <Footer />
         </div>
     );
 };
